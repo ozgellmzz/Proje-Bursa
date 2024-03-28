@@ -25,7 +25,7 @@ const SuggestionsComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/data/bursa.json');
+        const response = await axios.get('https://proje-bursa.vercel.app/data/bursa.json');
         setData(response.data.data);
         console.log(response.data);
       } catch (error) {
