@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import * as api from '../../src/pages/exportjson';
 
 const SuggestionsComponent = () => {
+
+  const [data,setData] = useState([]);
   const [selectedDays, setSelectedDays] = useState(1);
 
   const handleDaysChange = (e) => {
     setSelectedDays(parseInt(e.target.value));
   };
-
+  
   const getDestinationSuggestion = () => {
     if (selectedDays === 1) {
       return 'Uludağ\'da kayak yapabilirsin :)';
@@ -19,29 +22,35 @@ const SuggestionsComponent = () => {
     }
   };
 
-  return (
-    <div className="container mx-auto mt-8">
-      <label className="block text-gray-700 text-lg mb-2">
-        Tarih Aralığı Seçiniz:
-      </label>
-      <select
-        className="p-2 border border-gray-300 rounded"
-        onChange={handleDaysChange}
-        value={selectedDays}
-      >
-        <option value={1}>1. gün</option>
-        <option value={2}>2. gün</option>
-        <option value={3}>3. gün</option>
-        <option value={4}>4 gün ve fazla</option>
-      </select>
+  useEffect(() => {
+    const dataParcala = async () => {
+      try {
+        const veriler = await api.getVeri();
+        setData(veriler);
+        console.log(veriler);
+      }catch (error) {
+        console.error(error);
+      }
+    };
+    dataParcala();
+  }, []);
 
-      <div className="mt-4">
-        <p className="text-lg mt-2">
-          Öneri: {getDestinationSuggestion()}
-        </p>
-      </div>
-    </div>
-  );
-};
+   return (
+    
+<div className="container" style={{ maxWidth: '50%', padding: '50px'}}>
+ <div className="container mx-auto mt-8">
+           {data.map((item, index)=>(
+             <div key={index}>
+               <p>{item.id}</p>
+               <p>{item.sehir}</p>
+               <p>{item.adi}</p>
+               <p>{item.tipi}</p>
+               <p>{item.aciklama}</p>
+             </div>
+           ))}
+     </div>
+</div>
+   )
+ };
 
 export default SuggestionsComponent;

@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "sehir": "Bursa",
+      "adi": "Bursa Hayvanat Bahçesi",
+      "tipi": "Eğlence Yeri",
+      "aciklama": "Çeşitli hayvan türlerini görebileceğiniz bir hayvanat bahçesidir. Özellikle çocuklar için eğlenceli bir aktivite alanıdır."
+    },
+    {
+      "id": "2",
+      "sehir": "Bursa",
+      "adi": "Bursa Kent Müzesi",
+      "tipi": "Müze",
+      "aciklama": "Bursa'nın tarihini ve kültürel mirasını görebileceğiniz bir müzedir. Tarihi eserler, fotoğraflar ve belgeler sergilenmektedir."
+    },
+    {
+      "id": "3",
+      "sehir": "Bursa",
+      "adi": "Koza Han",
+      "tipi": "Tarihi Yapı",
+      "aciklama": "İpekçilik ve ticaret geçmişiyle ünlü olan Koza Han, Bursa'nın simgelerinden biridir. İçerisinde çeşitli dükkanlar bulunmaktadır."
+    },
+    {
+      "id": "4",
+      "sehir": "Bursa",
+      "adi": "Bursa Bilim ve Teknoloji Merkezi",
+      "tipi": "Eğlence Yeri",
+      "aciklama": "Eğitici ve interaktif etkinliklerin yapıldığı bir bilim merkezidir. Fen ve teknolojiye ilgi duyanlar için öğretici bir deneyim sunar."
+    },
+    {
+      "id": "4",
+      "sehir": "Bursa",
+      "adi": "Mudanya Sahili",
+      "tipi": "Doğal Alan",
+      "aciklama": "Marmara Denizi kıyısında yer alan Mudanya Sahili, deniz manzarası ve plajlarıyla yaz aylarında ziyaretçilerini ağırlar."
+    }
+  ]
+}
