@@ -1,5 +1,5 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import * as api from '../../src/pages/exportjson';
 
 const SuggestionsComponent = () => {
 
@@ -23,16 +23,17 @@ const SuggestionsComponent = () => {
   };
 
   useEffect(() => {
-    const dataParcala = async () => {
+    const fetchData = async () => {
       try {
-        const veriler = await api.getVeri();
-        setData(veriler);
-        console.log(veriler);
-      }catch (error) {
+        const response = await axios.get('http://localhost:3000/data/bursa.json');
+        setData(response.data.data);
+        console.log(response.data);
+      } catch (error) {
         console.error(error);
       }
     };
-    dataParcala();
+
+    fetchData();
   }, []);
 
    return (
